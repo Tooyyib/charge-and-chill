@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHARGE & CHILL MART - Real Madrid Edition</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+body{background:#f8f5ef}
+header{background:#0A0A0A;color:#FFD60A;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:99}
+.hero-slider{position:relative;height:420px;overflow:hidden;background:#000}
+.slide{position:absolute;inset:0;opacity:0;transition:1s;display:flex;align-items:center;padding:20px}
+.slide.active{opacity:1}
+.slide img{width:55%;height:90%;object-fit:cover;border-radius:16px}
+.slide-text{color:#fff;padding:18px;flex:1}
+.slide-text h2{font-size:32px;line-height:0.9;color:#FFD60A}
+.badge{background:#FFD60A;color:#111;padding:4px 10px;border-radius:20px;font-weight:800;font-size:11px;display:inline-block;margin:8px 0}
+.btn{background:#FFD60A;color:#111;border:none;padding:10px 16px;border-radius:10px;font-weight:800;cursor:pointer;margin-top:8px}
+.dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px}
+.dot{width:8px;height:8px;background:#ffffff66;border-radius:50%;cursor:pointer}
+.dot.active{background:#FFD60A}
+.price-box{margin:12px;background:#fff;border-radius:14px;padding:12px;box-shadow:0 4px 20px #0001}
+.row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed #eee}
+.tag{background:#FFD60A;padding:3px 10px;border-radius:20px;font-weight:800;font-size:12px}
+</style>
+</head>
+<body>
+<header><div style="text-align: center;">⚡ <b>CHARGE & CHILL MART</b><br><small style="font-size:10px">IVC Camp service 24/7</small></div><div>09091478239</div></header>
+
+<div class="hero-slider" id="slider">
+  <div class="slide active" style="background:linear-gradient(90deg,#111 40%,#FFD60A)">
+    <img src="/images/avaterc.jpeg" alt="avaterc" style="height: 400px; background-position: bottom;">
+    <div class="slide-text">
+      <span class="badge">Power Boost 🤍</span>
+      <h2>Power Up<br>With Fastest<br>Charger!</h2>
+      <p style="font-size:12px;margin:8px 0">Same guy in Real Madrid white jersey serving brothers at IVC Camp!</p>
+      <button class="btn" onclick="orderWA('I want to charge')">⚡ Charge Now</button>
+    </div>
+  </div>
+  <div class="slide" style="background:linear-gradient(90deg,#222 40%,#FFD60A)">
+    <img src="/images/avater.jpg" alt="avater">
+    <div class="slide-text">
+      <span class="badge">IVC CAMP • 24/7</span>
+      <div style="display: flex; flex-direction: column; gap: 2rem;">
+        <h2>Only Brothers<br>Chill Spot</h2>
+        <p style="font-size:12px;margin:8px 0">Phone charging, cold drinks, chin-chin, plantain chips, crunchy Kuli Kuli</p>
+      </div>
+      <button class="btn" onclick="orderWA('I want provision')">🛒 Shop Now</button>
+    </div>
+  </div>
+
+  <div class="slide" style="background:linear-gradient(90deg,#FFD60A 40%,#111)">
+    <img src="/images/ceo.jpeg" alt="ceo" style="height: 400px;">
+    <div class="slide-text" style="color:#111">
+      <span class="badge" style="background:#111;color:#FFD60A">Fastest Delivery</span>
+      <h2 style="color:#111">Fastest<br>Delivery To your door step</h2>
+      <p style="font-size:12px;margin:8px 0;color:#111">Charge & Chill Mart CEO — we deliver anywhere in camp!</p>
+      <button class="btn" style="background:#111;color:#FFD60A" onclick="orderWA('CEO I need delivery')">📦 Order Delivery</button>
+    </div>
+  </div>
+  <div class="dots"><div class="dot active" onclick="go(0)"></div><div class="dot" onclick="go(1)"></div><div class="dot" onclick="go(2)"></div></div>
+</div>
+
+<div class="price-box">
+  <h3 style="text-align:center">Charging Price Table N200 - N2,800</h3>
+  <div class="row"><span>🔋 Lamp</span><span class="tag">N200</span></div>
+  <div class="row"><span>🔋 Touch Light</span><span class="tag">N200</span></div>
+  <div class="row"><span>🔋 Bluetooth speaker</span><span class="tag">N200</span></div>
+  <div class="row"><span>🔋 phone</span><span class="tag">N200</span></div>
+  <div class="row"><span>🔋 Laptop</span><span class="tag">N200</span></div>
+  <div class="row"><span>🔋 Power Bank 5,000mAh</span><span class="tag">N200</span></div>
+  <div class="row"><span>🔋 Power Bank 10,000mAh</span><span class="tag">N400</span></div>
+  <div class="row"><span>🔋 Power Bank 20,000mAh</span><span class="tag">N800</span></div>
+  <div class="row"><span>🔋 Power Bank 30,000mAh</span><span class="tag">N1,200</span></div>
+  <div class="row"><span>🔋 Power Bank 40,000mAh</span><span class="tag">N1,600</span></div>
+  <div class="row"><span>🔋 Power Bank 50,000mAh</span><span class="tag">N2,000</span></div>
+  <div class="row"><span>🔋 Power Bank 60,000mAh</span><span class="tag">N2,400</span></div>
+  <div class="row"><span>🔋 Power Bank 70,000mAh</span><span class="tag">N2,800</span></div>
+  <div style=" color: #000; display: flex; justify-content: space-between;  font-style: italic; font-weight: bold;">
+    <div style="background-color: black; color: #FFD60A; padding: 8px; border-top-left-radius: 1rem;">Note:</div>
+    <marquee style="background-color: #FFD60A; padding: 8px; border-end-end-radius: 10px;">All charges are for full charge</marquee>
+  </div>
+</div>
+
+
+<div class="price-box">
+  <h3 style="text-align:center">Snacks and Drinks Price</h3>
+  <div class="row"><span>🥤 Chin-Chin</span><span class="tag">N200-N5,000</span></div>
+  <div class="row"><span>🥤 Plantain Chips</span><span class="tag">N200-N5,000</span></div>
+  <div class="row"><span>🥤 Kuli Kuli</span><span class="tag">N200-N5,000</span></div>
+  <div class="row"><span>💦 Sachet Water</span><span class="tag">3 for N100</span></div>
+  <div class="row"><span>🧴 Table Water</span><span class="tag">N200</span></div>
+  <div class="row"><span>🥤 American Cola</span><span class="tag">N400</span></div>
+</div>
+
+
+
+
+<!-- CAROUSEL COMPONENT -->
+<!-- All service -->
+
+<!-- ISOLATED CAROUSEL - WON'T CLASH -->
+
+<div style="background-color: #fff; box-shadow: 150px; border-radius: 35px; margin: 20px; padding: 30px;">
+  <div class="cc-carousel" id="cc-carousel">
+  <div class="cc-track" id="cc-track">
+    <div class="cc-slide"><img src="/images/combined.jpeg"></div>
+    <div class="cc-slide"><img src="/images/logoos.jpeg"></div>
+    <div class="cc-slide"><img src="/images/plain.jpeg"></div>
+    <div class="cc-slide"><img src="/images/powerbank.jpeg"></div>
+    <div class="cc-slide"><img src="/images/withdrawal.jpeg"></div>
+  </div>
+  <button class="cc-btn cc-prev" onclick="ccMove(-1)">❮</button>
+  <button class="cc-btn cc-next" onclick="ccMove(1)">❯</button>
+  <div class="cc-dots" id="cc-dots"></div>
+</div>
+
+<style>
+/* All styles are scoped with cc- prefix, no conflict */
+.cc-carousel{position:relative;width:100%;max-width:500px;height:300px;overflow:hidden;border-radius:16px;margin:16px auto;isolation:isolate}
+.cc-track{display:flex;transition:transform 0.6s ease;height:100%}
+.cc-slide{min-width:100%;height:100%}
+.cc-slide img{width:100%;height:100%;display:block}
+.cc-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.8);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;z-index:2}
+.cc-prev{left:10px}.cc-next{right:10px}
+.cc-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:2}
+.cc-dot{width:8px;height:8px;background:rgba(255,255,255,0.5);border-radius:50%;cursor:pointer}
+.cc-dot.cc-active{background:#fff;width:20px}
+</style>
+
+<script>
+(function(){
+  let ccIndex=0;
+  const ccTrack=document.getElementById('cc-track');
+  const ccTotal=5;
+  const ccDotsBox=document.getElementById('cc-dots');
+  
+  for(let i=0;i<ccTotal;i++){
+    const d=document.createElement('div');
+    d.className='cc-dot'+(i===0?' cc-active':'');
+    d.onclick=()=>{ccIndex=i;ccUpdate()};
+    ccDotsBox.appendChild(d);
+  }
+  const ccDots=document.querySelectorAll('.cc-dot');
+  
+  window.ccUpdate=function(){
+    ccTrack.style.transform=`translateX(-${ccIndex*100}%)`;
+    ccDots.forEach((d,i)=>d.classList.toggle('cc-active',i===ccIndex));
+  }
+  window.ccMove=function(dir){
+    ccIndex=(ccIndex+dir+ccTotal)%ccTotal;
+    ccUpdate();
+  }
+  setInterval(()=>ccMove(1),3000);
+})();
+</script>
+</div>
+
+
+
+<!-- END OF CAROUSEL COMPONENT -->
+
+
+
+<footer id="menu" style="background:#0A0A0A;color:#FFD60A;text-align:center;padding:12px 0 20px;font-size:10px">CHARGE & CHILL MART • 09091478239 • 24/7 </footer>
+
+<script>
+let cur=0; const slides=document.querySelectorAll('.slide'); const dots=document.querySelectorAll('.dot');
+function go(i){ slides[cur].classList.remove('active'); dots[cur].classList.remove('active'); cur=i; slides[cur].classList.add('active'); dots[cur].classList.add('active');}
+setInterval(()=>{ go((cur+1)%slides.length); },10000);
+function orderWA(m){ window.open(`https://wa.me/2349091478239?text=${encodeURIComponent('Hi Charge & Chill Mart! '+m)}`,'_blank');}
+</script>
+
+
+
+<!-- special component -->
+
+
+<!-- AUTO POPUP EVERY 10 MINUTES -->
+<div id="autoPopup" class="auto-modal">
+  <div class="auto-box">
+    <span class="auto-close" onclick="closeAutoPopup()">&times;</span>
+    
+    <!-- Change this content to any promo you want -->
+    <video src="/" controls  style="width:300px;height:300px;"></video>
+    <div style="padding:16px;text-align:center">
+      <h2 style="margin:0;color:#002080">⚡ STILL NEED LIGHT?</h2>
+      <p style="margin:8px 0">We are still OPEN 24HRS!</p>
+      
+      <!-- Price flash -->
+      <div style="background:#FFD60A;border-radius:8px;padding:8px;margin:8px 0;font-weight:900">
+        Phone: N200 | 10k mAh: N400 | 50k mAh: N2000
+      </div>
+      
+      <a href="https://wa.me/2349091478239?text=Hi%20Charge%20%26%20Chill,%20I%20want%20to%20charge%20my%20power%20bank" 
+         style="display:block;background:#002080;color:#FFD60A;padding:12px;border-radius:24px;text-decoration:none;font-weight:800;margin-top:8px">
+         Chat on WhatsApp Now
+      </a>
+      <p style="font-size:11px;margin-top:8px;color:#888">This will show again in 10 minutes</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.auto-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:99999;align-items:center;justify-content:center;padding:16px}
+.auto-modal.show{display:flex;animation:fadeIn 0.3s}
+.auto-box{background:#fff;width:100%;max-width:360px;border-radius:16px;overflow:hidden;position:relative;animation:popUp 0.4s;border:3px solid #FFD60A}
+.auto-close{position:absolute;top:6px;right:10px;font-size:28px;color:#fff;background:rgba(0,0,0,0.6);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes popUp{from{transform:scale(0.7)}to{transform:scale(1)}}
+</style>
+
+<script>
+// === 10 MINUTES AUTO POPUP LOGIC ===
+let popupInterval;
+
+function showAutoPopup(){
+  document.getElementById('autoPopup').classList.add('show');
+  // Optional: play small beep sound
+  // new Audio('pop.mp3').play();
+}
+
+function closeAutoPopup(){
+  document.getElementById('autoPopup').classList.remove('show');
+}
+
+// First popup after 10 seconds when user enters (to welcome them)
+setTimeout(showAutoPopup, 10000); // 10 seconds first time
+
+// Then every 10 minutes = 600,000 milliseconds
+popupInterval = setInterval(showAutoPopup, 600000); // 10 mins
+
+// Close when click outside
+document.getElementById('autoPopup').addEventListener('click', function(e){
+  if(e.target.id === 'autoPopup') closeAutoPopup();
+});
+
+// If you want it to stop after user orders (optional)
+// function stopPopup(){ clearInterval(popupInterval); }
+
+console.log("Auto popup set: First in 10sec, then every 10mins");
+</script>
+</body>
+</html>
